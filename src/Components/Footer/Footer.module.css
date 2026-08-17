@@ -1,0 +1,91 @@
+
+.footer_container {
+  width: 100%;
+  background-color: #141414; 
+  padding: 50px 0 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.footer_inner {
+  width: 100%;
+  max-width: 980px; /* Constraints bounds cleanly layout grids matching reference standards [Practice Exercises] */
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* SOCIAL ICONS PACK DESIGN CONTROL */
+.social_icons {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.icon_link {
+  color: #ffffff;
+  font-size: 18px; /* Precision vector size scale factor inside row layers */
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.icon_link:hover {
+  color: #b3b3b3; /* Grayish fading hover shift referencing official layouts */
+  transform: scale(1.08); /*Microscopic pop interaction buffer [Practice Exercises] */
+}
+
+
+.footer_links_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Splitting lanes into exactly 4 equal column tracks */
+  gap: 15px 20px;
+  margin-bottom: 30px;
+}
+
+.footer_links_grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer_links_grid li {
+  margin-bottom: 12px;
+}
+
+.footer_links_grid li a {
+  color: #808080; 
+  text-decoration: none;
+  font-size: 12px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  transition: text-decoration 0.2s ease;
+}
+
+.footer_links_grid li a:hover {
+  text-decoration: underline;
+}
+
+/* OFFICIAL FOOTER COPYRIGHT SECTION SPECIFICATIONS */
+.footer_copyright {
+  color: #808080;
+  font-size: 11px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin-top: 15px;
+}
+
+/* SMART DEVICE SCREEN RESPONSIVENESS (MEDIA QUERIES SETUP) [Practice Exercises] */
+@media (max-width: 768px) {
+  .footer_links_grid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+  }
+  .footer_inner { padding: 0 25px; }
+}
+
+@media (max-width: 480px) {
+  .footer_links_grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .social_icons { gap: 20px; }
+}

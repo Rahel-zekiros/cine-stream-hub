@@ -1,0 +1,269 @@
+/* =========================================================
+   BANNER
+========================================================= */
+.banner {
+  position: relative;
+  width: 100%;
+  height: 620px;
+  background-image: url("../../assets/image/banner.jpeg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #141414;
+}
+
+/* LEFT + OVERALL DARK OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.78) 0%,
+      rgba(0, 0, 0, 0.58) 20%,
+      rgba(0, 0, 0, 0.30) 45%,
+      rgba(0, 0, 0, 0.08) 75%,
+      rgba(0, 0, 0, 0) 100%
+    );
+}
+/* BOTTOM FADE*/
+.banner::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 180px;
+  z-index: 2;
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(20, 20, 20, 0.15) 30%,
+      rgba(20, 20, 20, 0.70) 75%,
+      #141414 100%
+    );
+  pointer-events: none;
+}
+
+/*BANNER CONTENT*/
+.bannerContent {
+  position: relative;
+  z-index: 3;
+  width: 45%;
+  margin-left: 42px;
+  margin-top: 200px;
+  color: #ffffff;
+}
+
+/* NETFLIX */
+.netflix {
+  color: #e50914;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 12px;
+}
+
+/* TITLE */
+.title {
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 1.1;
+  font-weight: 700;
+  margin: 0 0 18px;
+  max-width: 520px;
+}
+
+/* DESCRIPTION*/
+.description {
+  color: #ffffff;
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 400;
+  max-width: 520px;
+  margin: 0 0 22px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/*BUTTONS */
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/* PLAY BUTTON */
+.playButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 110px;
+  height: 40px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.playButton svg {
+  width: 17px;
+  height: 17px;
+  font-size: 17px;
+}
+
+.playButton:hover {
+  background: rgba(255, 255, 255, 0.75);
+  transform: scale(1.03);
+}
+/* MY LIST BUTTON*/
+.myListButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 110px;
+  height: 40px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 4px;
+  background: white;
+  color: black;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.myListButton svg {
+  width: 17px;
+  height: 17px;
+  font-size: 17px;
+}
+
+.myListButton:hover {
+  background: rgba(109, 109, 110, 0.55);
+  transform: scale(1.03);
+}
+
+/*TABLET*/
+
+@media (max-width: 900px) {
+  .banner {
+    height: 500px;
+    background-position: center center;
+  }
+
+  .bannerContent {
+    width: 55%;
+    margin-left: 30px;
+    margin-top: 70px;
+  }
+
+  .netflix {
+    font-size: 14px;
+  }
+
+  .title {
+    font-size: 40px;
+    max-width: 450px;
+  }
+
+  .description {
+    font-size: 15px;
+    max-width: 430px;
+  }
+
+}
+/*MOBILE*/
+@media (max-width: 600px) {
+  .banner {
+    height: 560px;
+    align-items: flex-end;
+    background-position: center center;
+  }
+
+  .overlay {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.05) 0%,
+        rgba(0, 0, 0, 0.30) 40%,
+        rgba(0, 0, 0, 0.90) 85%,
+        #141414 100%
+      );
+  }
+
+  .bannerContent {
+    width: auto;
+    margin: 0 20px 55px;
+  }
+
+  .netflix {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    font-size: 32px;
+    margin-bottom: 14px;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 1.45;
+    max-width: 100%;
+    margin-bottom: 18px;
+  }
+
+  .buttons {
+    gap: 8px;
+  }
+
+  .playButton,.myListButton {
+    min-width: 95px;
+    height: 36px;
+    padding: 0 14px;
+    font-size: 12px;
+  }
+
+  .playButton svg,
+  .myListButton svg {
+    width: 15px;
+    height: 15px;
+  }
+
+}
+
+
+.moreLink {
+  color: #e50914;
+  margin-left: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12px;
+  text-decoration: underline;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+  text-decoration: none; 
+
+  
+}
+
+.moreLink:hover {
+  color: #ff1f2d; 
+  transform: scale(1.05);
+}

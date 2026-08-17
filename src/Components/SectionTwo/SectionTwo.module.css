@@ -1,0 +1,25 @@
+/* SECTION TWO */
+
+.sectionTwo {
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: #000;
+  color: #fff;
+
+  padding: 25px 0 60px;
+
+  /* IMPORTANT: Prevent horizontal browser scrolling. */
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .sectionTwo {
+    padding-top: 15px;
+    padding-bottom: 40px;
+  }
+}

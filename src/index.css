@@ -1,0 +1,25 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #000000 !important; 
+  color: #ffffff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-x: hidden !important; 
+  height: auto !important;
+  min-height: 100% !important;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto !important;
+  overflow-x: hidden !important;
+  background-color: #000000 !important;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
