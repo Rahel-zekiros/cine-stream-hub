@@ -8,7 +8,7 @@ const BASE_URL = "https://api.themoviedb.org/3";
 const SectionTwo = () => {
   const [movies, setMovies] = useState({
     trending: [],
-    netflixOriginals: [],
+    featured: [],
     topRated: [],
     action: [],
     comedy: [],
@@ -20,12 +20,18 @@ const SectionTwo = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        // 8 API REQUESTS
-
- const [trendingResponse, netflixResponse, topRatedResponse, actionResponse, comedyResponse, horrorResponse, romanceResponse, documentariesResponse,
+        const [
+          trendingResponse,
+          featuredResponse,
+          topRatedResponse,
+          actionResponse,
+          comedyResponse,
+          horrorResponse,
+          romanceResponse,
+          documentariesResponse,
         ] = await Promise.all([
           fetch(`${BASE_URL}${requests.fetchTrending}`),
-          fetch(`${BASE_URL}${requests.fetchNetflixOriginals}`),
+          fetch(`${BASE_URL}${requests.fetchFeatured}`),
           fetch(`${BASE_URL}${requests.fetchTopRatedMovies}`),
           fetch(`${BASE_URL}${requests.fetchActionMovies}`),
           fetch(`${BASE_URL}${requests.fetchComedyMovies}`),
@@ -34,11 +40,9 @@ const SectionTwo = () => {
           fetch(`${BASE_URL}${requests.fetchDocumentaries}`),
         ]);
 
-        // 8 RESPONSES
-
         const [
           trendingData,
-          netflixData,
+          featuredData,
           topRatedData,
           actionData,
           comedyData,
@@ -47,7 +51,7 @@ const SectionTwo = () => {
           documentariesData,
         ] = await Promise.all([
           trendingResponse.json(),
-          netflixResponse.json(),
+          featuredResponse.json(),
           topRatedResponse.json(),
           actionResponse.json(),
           comedyResponse.json(),
@@ -56,11 +60,9 @@ const SectionTwo = () => {
           documentariesResponse.json(),
         ]);
 
-        // SAVE RESPONSE DATA
-
         setMovies({
           trending: trendingData.results || [],
-          netflixOriginals: netflixData.results || [],
+          featured: featuredData.results || [],
           topRated: topRatedData.results || [],
           action: actionData.results || [],
           comedy: comedyData.results || [],
@@ -80,21 +82,45 @@ const SectionTwo = () => {
   return (
     <section className={styles.sectionTwo}>
 
-      <MovieRow title="Movie suggestions" movies={movies.trending} />
+      <MovieRow
+        title="Movie Suggestions"
+        movies={movies.trending}
+      />
 
-      <MovieRow title="Popular on Netflix" movies={movies.netflixOriginals}/>
+      <MovieRow
+        title="Featured Movies"
+        movies={movies.featured}
+      />
 
-      <MovieRow title="Top Rated" movies={movies.topRated}/>
+      <MovieRow
+        title="Top Rated"
+        movies={movies.topRated}
+      />
 
-      <MovieRow title="Action Movies" movies={movies.action} />
+      <MovieRow
+        title="Action Movies"
+        movies={movies.action}
+      />
 
-      <MovieRow title="Comedy Movies" movies={movies.comedy}/>
+      <MovieRow
+        title="Comedy Movies"
+        movies={movies.comedy}
+      />
 
-      <MovieRow  title="Horror Movies"  movies={movies.horror} />
+      <MovieRow
+        title="Horror Movies"
+        movies={movies.horror}
+      />
 
-      <MovieRow title="Romance Movies" movies={movies.romance} />
+      <MovieRow
+        title="Romance Movies"
+        movies={movies.romance}
+      />
 
-      <MovieRow title="Documentaries" movies={movies.documentaries} />
+      <MovieRow
+        title="Documentaries"
+        movies={movies.documentaries}
+      />
 
     </section>
   );

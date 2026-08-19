@@ -1,18 +1,18 @@
 /* =========================================================
    BANNER
 ========================================================= */
+
 .banner {
   position: relative;
   width: 100%;
   height: 620px;
-  background-image: url("../../assets/image/banner.jpeg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-color: #141414;
+  background-color: #0f172a;
 }
 
 /* LEFT + OVERALL DARK OVERLAY */
@@ -30,7 +30,9 @@
       rgba(0, 0, 0, 0) 100%
     );
 }
-/* BOTTOM FADE*/
+
+/* BOTTOM FADE */
+
 .banner::after {
   content: "";
   position: absolute;
@@ -43,14 +45,27 @@
     linear-gradient(
       to bottom,
       transparent 0%,
-      rgba(20, 20, 20, 0.15) 30%,
-      rgba(20, 20, 20, 0.70) 75%,
-      #141414 100%
+      rgba(15, 23, 42, 0.15) 30%,
+      rgba(15, 23, 42, 0.70) 75%,
+      #0f172a 100%
     );
+
   pointer-events: none;
 }
 
-/*BANNER CONTENT*/
+/*LOADING */
+
+.loading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* BANNER CONTENT */
 .bannerContent {
   position: relative;
   z-index: 3;
@@ -60,13 +75,15 @@
   color: #ffffff;
 }
 
-/* NETFLIX */
-.netflix {
-  color: #e50914;
-  font-size: 25px;
-  font-weight: 700;
-  letter-spacing: 1px;
+/* ORIGINAL BRAND */
+
+.brand {
+  color: #4da6ff;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
   margin: 0 0 12px;
+  text-transform: uppercase;
 }
 
 /* TITLE */
@@ -79,7 +96,8 @@
   max-width: 520px;
 }
 
-/* DESCRIPTION*/
+/*DESCRIPTION */
+
 .description {
   color: #ffffff;
   font-size: 17px;
@@ -87,16 +105,39 @@
   font-weight: 400;
   max-width: 520px;
   margin: 0 0 22px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.7);
 }
 
-/*BUTTONS */
+/*MORE / LESS */
+
+.moreLink {
+  color: #4da6ff;
+  margin-left: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 12px;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+  display: inline-block;
+}
+
+.moreLink:hover {
+  color: #80c4ff;
+  transform: scale(1.05);
+}
+
+/* BUTTONS*/
+
 .buttons {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-/* PLAY BUTTON */
+
+ 
 .playButton {
   display: flex;
   align-items: center;
@@ -106,9 +147,9 @@
   height: 40px;
   padding: 0 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   background: #ffffff;
-  color: #000000;
+  color: #111827;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -124,10 +165,12 @@
 }
 
 .playButton:hover {
-  background: rgba(255, 255, 255, 0.75);
+  background: #e5e7eb;
   transform: scale(1.03);
 }
-/* MY LIST BUTTON*/
+
+/* MY LIST BUTTON */
+
 .myListButton {
   display: flex;
   align-items: center;
@@ -137,9 +180,9 @@
   height: 40px;
   padding: 0 20px;
   border: none;
-  border-radius: 4px;
-  background: white;
-  color: black;
+  border-radius: 5px;
+  background: rgba(31, 41, 55, 0.90);
+  color: #ffffff;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -155,11 +198,11 @@
 }
 
 .myListButton:hover {
-  background: rgba(109, 109, 110, 0.55);
+  background: rgba(75, 85, 99, 0.95);
   transform: scale(1.03);
 }
 
-/*TABLET*/
+/*TABLET */
 
 @media (max-width: 900px) {
   .banner {
@@ -173,8 +216,8 @@
     margin-top: 70px;
   }
 
-  .netflix {
-    font-size: 14px;
+  .brand {
+    font-size: 16px;
   }
 
   .title {
@@ -186,9 +229,10 @@
     font-size: 15px;
     max-width: 430px;
   }
-
 }
-/*MOBILE*/
+
+/* MOBILE */
+
 @media (max-width: 600px) {
   .banner {
     height: 560px;
@@ -203,7 +247,7 @@
         rgba(0, 0, 0, 0.05) 0%,
         rgba(0, 0, 0, 0.30) 40%,
         rgba(0, 0, 0, 0.90) 85%,
-        #141414 100%
+        #0f172a 100%
       );
   }
 
@@ -212,8 +256,8 @@
     margin: 0 20px 55px;
   }
 
-  .netflix {
-    font-size: 13px;
+  .brand {
+    font-size: 14px;
     margin-bottom: 10px;
   }
 
@@ -233,7 +277,8 @@
     gap: 8px;
   }
 
-  .playButton,.myListButton {
+  .playButton,
+  .myListButton {
     min-width: 95px;
     height: 36px;
     padding: 0 14px;
@@ -245,25 +290,30 @@
     width: 15px;
     height: 15px;
   }
-
 }
 
+/* VERY SMALL MOBILE */
 
-.moreLink {
-  color: #e50914;
-  margin-left: 8px;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 12px;
-  text-decoration: underline;
-  transition: color 0.2s ease, transform 0.2s ease;
-  display: inline-block;
-  text-decoration: none; 
+@media (max-width: 400px) {
 
-  
-}
+  .banner {
+    height: 540px;
+  }
 
-.moreLink:hover {
-  color: #ff1f2d; 
-  transform: scale(1.05);
+  .bannerContent {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .brand {
+    font-size: 12px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
 }

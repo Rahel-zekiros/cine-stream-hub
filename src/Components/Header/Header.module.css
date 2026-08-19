@@ -17,10 +17,10 @@
   color: #ffffff;
   /* BEFORE SCROLL Header is transparent so the hero/banner can be seen behind it.*/
   background: transparent;
-  transition:
+   transition:
     background-color 0.35s ease,
     box-shadow 0.35s ease;
-}
+} 
 /*HEADER AFTER SCROLL */
 .headerScrolled {
   /* AFTER SCROLL Header becomes black.*/
@@ -32,18 +32,27 @@
   display: flex;
   align-items: center;
   gap: 42px;
-  min-width: 0;
 }
-/*NETFLIX LOGO */
 .logo {
-  color: #e50914;
-  font-size: 28px;
-  font-weight: 900;
-  letter-spacing: -1px;
+  color: #4da6ff;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
   line-height: 1;
   white-space: nowrap;
   cursor: pointer;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
+
+.logo:hover {
+  color: #80c4ff;
+
+  transform: scale(1.02);
+}
+
+
 /* NAVIGATION */
 .navMenu {
   display: flex;
@@ -104,13 +113,6 @@
   height: 21px;
   stroke-width: 2;
 }
-/* SEARCH BOX Opens BESIDE search icon*/
-.searchBox {
-  display: flex;
-  align-items: center;
-  margin-left: 8px;
-  animation: searchOpen 0.2s ease;
-}
 
 .searchInput {
   width: 220px;
@@ -122,7 +124,8 @@
   background: #141414;
   color: #ffffff;
   font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
+  animation: searchOpen 0.6s ease;
+
 }
 
 .searchInput::placeholder {
@@ -141,7 +144,7 @@
 
   to {
     width: 220px;
-    opacity: 1;
+    opacity: 0.5;
   }
 
 }
@@ -199,122 +202,7 @@
   font-weight: 700;
   line-height: 1;
 }
-/* NOTIFICATION DROPDOWN Opens BELOW notification icon */
-.notificationDropdown {
-  position: absolute;
-  top: 48px;
-  right: -20px;
-  width: 330px;
-  max-height: 420px;
-  overflow-y: auto;
-  background: rgba(20, 20, 20, 0.98);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 3px;
-  box-shadow:  0 10px 30px rgba(0, 0, 0, 0.65);
-  z-index: 2000;
-  animation: notificationOpen 0.2s ease;
-}
 
-
-@keyframes notificationOpen {
-  from {
-    opacity: 0;
-    transform:translateY(-8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-}
-
-/*NOTIFICATION HEADER */
-.notificationHeader {
-  padding: 16px;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 700;
-  border-bottom: 1px solid #333333;
-}
-
-/*NOTIFICATION ITEM*/
-.notificationItem {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 14px 16px;
-  border-bottom:  1px solid #292929;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.notificationItem:hover {
-  background: #292929;
-}
-/*  NOTIFICATION IMAGE / ICON */
-.notificationImage {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  background: #333333;
-  border-radius: 50%;
-  font-size: 18px;
-}
-
-
-/*  NOTIFICATION CONTENT */
-.notificationContent {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  min-width: 0;
-}
-
-
-.notificationContent h4 {
-  margin: 0;
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-
-.notificationContent p {
-  margin: 0;
-  color: #b3b3b3;
-  font-size: 12px;
-  line-height: 1.4;
-}
-
-
-.notificationContent span {
-  color: #777777;
-  font-size: 11px;
-}
-
-
-/*  VIEW ALL NOTIFICATIONS*/
-.viewAllNotifications {
-  width: 100%;
-  padding: 14px;
-  border: none;
-  outline: none;
-  background: transparent;
-  color: #ffffff;
-  font-size: 13px;
-  cursor: pointer;
-  transition:
-    background-color 0.2s ease;
-}
-
-
-.viewAllNotifications:hover {
-  background: #292929;
-}
 
 /* PROFILE CONTAINER*/
 .profileContainer {
@@ -372,9 +260,9 @@
 }
 
 .dropdownArrow svg {
-  width: 17px;
-  height: 17px;
-  stroke-width: 2;
+  width: 20px;
+  height: 20px;
+  stroke-width: 3;
 }
 /* ARROW UP */
 .arrowUp {
@@ -394,7 +282,6 @@
   border-radius: 2px;
   box-shadow:
     0 10px 25px rgba(0, 0, 0, 0.6);
-  z-index: 2000;
   animation:
     profileOpen 0.2s ease;
 }
@@ -403,7 +290,7 @@
   from {
     opacity: 0;
     transform:
-      translateY(-7px);
+      translateY(-8px);
   }
   to {
     opacity: 1;
@@ -437,20 +324,6 @@
   height: 1px;
   background:
     rgba(255, 255, 255, 0.12);
-}
-/* SCROLLBAR - NOTIFICATION */
-.notificationDropdown::-webkit-scrollbar {
-  width: 6px;
-}
-
-.notificationDropdown::-webkit-scrollbar-track {
-  background: #141414;
-}
-
-
-.notificationDropdown::-webkit-scrollbar-thumb {
-  background: #444444;
-  border-radius: 10px;
 }
 /*TABLET */
 @media (max-width: 1100px) {
