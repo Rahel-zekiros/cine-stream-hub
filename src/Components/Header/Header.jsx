@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
-import {
-  FiSearch,
-  FiBell,
-  FiUser,
-  FiChevronDown,
-} from "react-icons/fi";
+import {FiSearch,FiBell,FiUser,FiChevronDown,} from "react-icons/fi";
 
 function Header() {
   const [showSearch, setShowSearch] = useState(false);
@@ -36,7 +31,7 @@ function Header() {
         isScrolled ? styles.headerScrolled : ""
       }`}
     >
-      {/* ================= LEFT SIDE ================= */}
+      {/* LEFT SIDE */}
 
       <div className={styles.headerLeft}>
 
@@ -109,9 +104,7 @@ function Header() {
 
             {notificationCount > 0 && (
               <span className={styles.notificationBadge}>
-                {notificationCount > 5
-                  ? "5+"
-                  : notificationCount}
+                {notificationCount > 5 ? "5+" : notificationCount}
               </span>
             )}
           </button>
@@ -128,8 +121,7 @@ function Header() {
 
           {/* DROPDOWN ARROW */}
           <button
-            className={`${styles.dropdownArrow} ${
-              showProfileMenu ? styles.arrowUp : "" }`}
+            className={`${styles.dropdownArrow} ${ showProfileMenu ? styles.arrowUp : "" }`}
             onClick={() =>
               setShowProfileMenu(!showProfileMenu) } aria-label="Profile menu"
           >

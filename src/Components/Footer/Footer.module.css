@@ -30,7 +30,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: #aaa;
   font-size: 17px;
 
@@ -73,11 +72,8 @@
 
 .footerLinksGrid li a {
   color: #999;
-
   font-size: 13px;
-
   text-decoration: none;
-
   transition: color 0.2s ease;
 }
 
@@ -90,11 +86,8 @@
 
 .footerCopyright {
   padding-top: 20px;
-
   border-top: 1px solid #292929;
-
   color: #666;
-
   font-size: 11px;
 }
 

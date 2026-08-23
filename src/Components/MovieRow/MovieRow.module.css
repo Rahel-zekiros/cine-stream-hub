@@ -1,45 +1,15 @@
 
-:global(.header) {
-  position: absolute !important; 
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000 !important; 
-  padding: 10px 4% !important; 
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%) !important;
-  box-sizing: border-box;
-}
-
-.sectionTwo {
-  background-color: #000000 !important; 
-  padding: 120px 0 180px 0 !important; /* Rich bottom padding for footer safety */
-  color: #ffffff;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  overflow-x: hidden !important; 
-  width: 100% !important;
-  max-width: 100vw !important;
-}
 
 .rowWrapper {
   position: relative !important;
   margin-bottom: 35px !important; 
-  overflow: visible !important; 
-  z-index: 10 !important; 
-  transition: z-index 0.2s ease;
-}
-
-.rowWrapper:hover {
-  z-index: 5000 !important; 
+  
 }
 
 /* ROW TITLE SPECS */
 .sectionHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 0 40px;
   margin-bottom: 8px;
-  color: white;
 }
 
 .sectionHeader h2 {
@@ -47,13 +17,9 @@
   color: white;
   font-size: 18px;
   font-weight: 600;
-}
+} 
 
-.Row {
-  position: relative;
-  width: 100%;
-  overflow: visible !important;
-}
+
 
 .movieRowContainer {
   width: 100%;
@@ -61,37 +27,16 @@
   overflow: visible !important; 
 }
 
-.movieSwiper {
-  width: 100%;
-  overflow: visible !important;
-}
 
-/*SWIPER DEEP ACTIVE INTERNAL MOTOR OVERRIDES*/
-.Row :global(.swiper),
-.Row :global(.swiper-wrapper) {
-  overflow: visible !important;
-}
-
-.Row :global(.swiper) {
-  width: 100%;
-  height: 105px !important; 
-  padding: 10px 50px !important; 
-  box-sizing: border-box;
-}
-
-.Row :global(.swiper-wrapper) {
-  height: 100%;
-  align-items: flex-start !important; 
-}
 
 .rowWrapper :global(.swiper) {
   max-width: 100%;
   overflow: visible !important;
 }
-
+/* 
 .rowWrapper :global(.swiper-wrapper) {
   overflow: visible !important;
-}
+} */
 
 .Row :global(.swiper-slide) {
   position: relative !important;
@@ -115,58 +60,6 @@
   margin-right: 22px !important;
 }
 
-/* GLOBAL ARROWS NAVIGATION DESIGN CONTROL */
-.Row :global(.swiper-button-prev),
-.Row :global(.swiper-button-next) {
-  width: 45px;
-  height: 105px !important; 
-  top: 62px; 
-  margin-top: 0;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.7) !important; 
-  color: white !important;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease, background 0.2s ease;
-  z-index: 10000000 !important; 
-}
-
-.Row:hover :global(.swiper-button-prev),
-.Row:hover :global(.swiper-button-next) {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.Row :global(.swiper-button-prev:hover),
-.Row :global(.swiper-button-next:hover) {
-  background: rgba(0, 0, 0, 0.9) !important;
-  opacity: 1;
-}
-
-.Row :global(.swiper-button-prev::after),
-.Row :global(.swiper-button-next::after) {
-  font-size: 18px !important;
-  font-weight: bold;
-}
-
-.Row :global(.swiper-button-prev) {
-  left: 0;
-  border-radius: 0 4px 4px 0;
-}
-
-.Row :global(.swiper-button-next) {
-  right: 0;
-  border-radius: 4px 0 0 4px;
-}
-
-.Row :global(.swiper-button-disabled) {
-  opacity: 0 !important;
-  pointer-events: none;
-}
-
-.arrow {
-  display: none;
-}
 
 /* SCREEN RESPONSIVENESS BREAKPOINTS MEDIA QUERIES DESIGN GRID */
 @media (max-width: 1024px) {

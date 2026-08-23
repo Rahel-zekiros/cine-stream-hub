@@ -14,7 +14,6 @@ const MovieRow = ({ title, movies }) => {
       {/* ROW TITLE */}
       <div className={styles.sectionHeader}>
         <h2>{title}</h2>
-        <button className={styles.arrow}>→</button>
       </div>
 
       {/* MOVIE SWIPER CONTAINER */}
@@ -30,7 +29,7 @@ const MovieRow = ({ title, movies }) => {
           breakpoints={{
             480: { slidesPerView: 2, slidesPerGroup: 2 },
             768: { slidesPerView: 4, slidesPerGroup: 4 },
-            1024: { slidesPerView: 6, slidesPerGroup: 6 }, 
+            1024: { slidesPerView: 6, slidesPerGroup: 6}, 
           }}
           className={styles.movieSwiper}
         >

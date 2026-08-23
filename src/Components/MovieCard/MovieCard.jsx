@@ -5,6 +5,7 @@ import styles from "./MovieCard.module.css";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
 const MovieCard = ({ movie }) => {
+  console.log(movie)
   return (
     <div className={styles.movieCardWrapper}>
 
@@ -35,7 +36,7 @@ const MovieCard = ({ movie }) => {
               <button className={styles.iconBtn}>
                 <FaPlus />
               </button>
-
+             
               {/* LIKE */}
               <button className={styles.iconBtn}>
                 <FaThumbsUp />

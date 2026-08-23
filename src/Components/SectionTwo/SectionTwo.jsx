@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import MovieRow from "../MovieRow/MovieRow.jsx";
 import requests from "../../api/request.js";
 import styles from "./SectionTwo.module.css";
@@ -6,6 +7,9 @@ import styles from "./SectionTwo.module.css";
 const BASE_URL = "https://api.themoviedb.org/3";
 
 const SectionTwo = () => {
+
+  // MOVIES STATE
+  
   const [movies, setMovies] = useState({
     trending: [],
     featured: [],
@@ -17,9 +21,16 @@ const SectionTwo = () => {
     documentaries: [],
   });
 
+
+  // =========================
+  // FETCH MOVIES
+  // =========================
   useEffect(() => {
+
     const fetchMovies = async () => {
+
       try {
+        // GET ALL API DATA
         const [
           trendingResponse,
           featuredResponse,
@@ -30,60 +41,96 @@ const SectionTwo = () => {
           romanceResponse,
           documentariesResponse,
         ] = await Promise.all([
-          fetch(`${BASE_URL}${requests.fetchTrending}`),
-          fetch(`${BASE_URL}${requests.fetchFeatured}`),
-          fetch(`${BASE_URL}${requests.fetchTopRatedMovies}`),
-          fetch(`${BASE_URL}${requests.fetchActionMovies}`),
-          fetch(`${BASE_URL}${requests.fetchComedyMovies}`),
-          fetch(`${BASE_URL}${requests.fetchHorrorMovies}`),
-          fetch(`${BASE_URL}${requests.fetchRomanceMovies}`),
-          fetch(`${BASE_URL}${requests.fetchDocumentaries}`),
+
+          axios.get(
+            `${BASE_URL}${requests.fetchTrending}`
+          ),
+
+          axios.get(
+            `${BASE_URL}${requests.fetchFeatured}`
+          ),
+
+          axios.get(
+            `${BASE_URL}${requests.fetchTopRatedMovies}`
+          ),
+
+          axios.get(
+            `${BASE_URL}${requests.fetchActionMovies}`
+          ),
+
+          axios.get(
+            `${BASE_URL}${requests.fetchComedyMovies}`
+          ),
+
+          axios.get(
+            `${BASE_URL}${requests.fetchHorrorMovies}`
+          ),
+
+          axios.get(
+            `${BASE_URL}${requests.fetchRomanceMovies}`
+          ),
+
+          axios.get(
+            `${BASE_URL}${requests.fetchDocumentaries}`
+          ),
+
         ]);
 
-        const [
-          trendingData,
-          featuredData,
-          topRatedData,
-          actionData,
-          comedyData,
-          horrorData,
-          romanceData,
-          documentariesData,
-        ] = await Promise.all([
-          trendingResponse.json(),
-          featuredResponse.json(),
-          topRatedResponse.json(),
-          actionResponse.json(),
-          comedyResponse.json(),
-          horrorResponse.json(),
-          romanceResponse.json(),
-          documentariesResponse.json(),
-        ]);
 
+        // SAVE API DATA INTO STATE
         setMovies({
-          trending: trendingData.results || [],
-          featured: featuredData.results || [],
-          topRated: topRatedData.results || [],
-          action: actionData.results || [],
-          comedy: comedyData.results || [],
-          horror: horrorData.results || [],
-          romance: romanceData.results || [],
-          documentaries: documentariesData.results || [],
+
+          trending:
+            trendingResponse.data.results || [],
+
+          featured:
+            featuredResponse.data.results || [],
+
+          topRated:
+            topRatedResponse.data.results || [],
+
+          action:
+            actionResponse.data.results || [],
+
+          comedy:
+            comedyResponse.data.results || [],
+
+          horror:
+            horrorResponse.data.results || [],
+
+          romance:
+            romanceResponse.data.results || [],
+
+          documentaries:
+            documentariesResponse.data.results || [],
+
         });
 
       } catch (error) {
-        console.error("Failed to fetch movies:", error);
+
+        console.error(
+          "Failed to fetch movies:",
+          error
+        );
+
       }
+
     };
 
+
+    // CALL FUNCTION
     fetchMovies();
+
   }, []);
 
+
+  // DISPLAY MOVIE ROWS
   return (
+
     <section className={styles.sectionTwo}>
 
       <MovieRow
-        title="Movie Suggestions"
+        title="Trending"
         movies={movies.trending}
       />
 
@@ -123,7 +170,17 @@ const SectionTwo = () => {
       />
 
     </section>
+
   );
 };
 
 export default SectionTwo;
+
+
+
+
+// const trending = await axios.get(trendingUrl);
+
+// const featured = await axios.get(featuredUrl);
+
+// const action = await axios.get(actionUrl);
