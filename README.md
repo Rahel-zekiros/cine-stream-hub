@@ -75,13 +75,13 @@ Browse movies and shows organized into categories such as:
 **1. Clone the repository**
 
 ```bash
-git clone YOUR_PUBLIC_GITHUB_REPOSITORY_URL
+git https://github.com/Rahel-zekiros/cine-stream-hub
 ```
 
 **2. Open the project folder**
 
 ```bash
-cd YOUR_PROJECT_FOLDER
+cd netflix-clone
 ```
 
 **3. Install dependencies**
@@ -121,7 +121,7 @@ npm run build
 
 **Live Demo:** YOUR_LIVE_DEPLOYMENT_URL
 
-**GitHub Repository:** YOUR_PUBLIC_GITHUB_REPOSITORY_URL
+**GitHub Repository:** https://cine-stream-hub.vercel.app
 
 ## What I Learned
 
