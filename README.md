@@ -145,15 +145,16 @@ npm run build
 The following is an illustrative structure. Update it if your actual repository uses different file or folder names.
 
 ```text
-cine-stream-hub/
+##  Project Structure
+
+```text
+netflix-clone/
 ├── public/
 ├── src/
 │   ├── components/
-│   │   ├── MovieCard/
 │   │   ├── Banner/
+│   │   ├── MovieCard/
 │   │   └── ...
-│   ├── pages/
-│   ├── services/
 │   ├── App.jsx
 │   └── main.jsx
 ├── .gitignore
@@ -161,6 +162,9 @@ cine-stream-hub/
 ├── package-lock.json
 ├── vite.config.js
 └── README.md
+```
+
+
 ```
 
 ##  What I Learned
